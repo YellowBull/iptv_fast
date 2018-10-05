@@ -14,7 +14,7 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://123.207.59.157:3306/IPTV?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
+        username: admin
         password: 123456
     jackson:
         time-zone: GMT+8
