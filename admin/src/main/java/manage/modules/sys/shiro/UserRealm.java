@@ -103,15 +103,22 @@ public class UserRealm extends AuthorizingRealm
 		if(user.getStatus() == 0){
 			throw new LockedAccountException("账号已被锁定,请联系管理员");
 		}
-
+		// 设置认证信息
 		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, user.getPassword(), ByteSource.Util.bytes(user.getSalt()), getName());
 		return info;
 	}
 
+	/**
+	 * 设置加密方式
+	 * @param credentialsMatcher
+	 */
 	@Override
 	public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher) {
+		// hash 认证加密
 		HashedCredentialsMatcher shaCredentialsMatcher = new HashedCredentialsMatcher();
+		// 设置加密方式名
 		shaCredentialsMatcher.setHashAlgorithmName(ShiroUtils.hashAlgorithmName);
+		// 设置加密次数
 		shaCredentialsMatcher.setHashIterations(ShiroUtils.hashIterations);
 		super.setCredentialsMatcher(shaCredentialsMatcher);
 	}

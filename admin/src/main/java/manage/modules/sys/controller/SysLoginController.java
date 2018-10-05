@@ -70,8 +70,11 @@ public class SysLoginController {
 		}
 		
 		try{
+			// 获取登录主体
 			Subject subject = ShiroUtils.getSubject();
+			// 封装主体
 			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+			// 主体提交请求登录
 			subject.login(token);
 		}catch (UnknownAccountException e) {
 			return R.error(e.getMessage());
