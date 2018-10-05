@@ -13,10 +13,7 @@ spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
-#        url: jdbc:mysql://10.250.23.88:3306/carinfomonitor?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
-#        username: root
-#        password: 123
-        url: jdbc:mysql://localhost:3306/renren_security?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://123.207.59.157:3306/IPTV?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
     jackson:
