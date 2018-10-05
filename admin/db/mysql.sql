@@ -32,6 +32,7 @@ CREATE TABLE `sys_user` (
   `status` tinyint COMMENT '状态  0：禁用   1：正常',
   `dept_id` bigint(20) COMMENT '部门ID',
   `create_time` datetime COMMENT '创建时间',
+  `validity` datetime COMMENT '有效截止期',
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统用户';
