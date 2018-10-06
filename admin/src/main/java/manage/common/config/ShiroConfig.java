@@ -7,7 +7,9 @@ import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,6 +57,16 @@ public class ShiroConfig {
         securityManager.setSessionManager(sessionManager);
         return securityManager;
     }
+
+//    @Bean("cookieRememberMeManager")
+//    public CookieRememberMeManager cookieRememberMeManager(){
+//        CookieRememberMeManager cookieRememberMeManager =new CookieRememberMeManager();
+//        SimpleCookie simpleCookie = new SimpleCookie();
+//        simpleCookie.setMaxAge(30*24*60*60);
+//        cookieRememberMeManager.setCookie(simpleCookie);
+//        return cookieRememberMeManager;
+//    }
+
 
     /**
      * 创建shiroFilter
