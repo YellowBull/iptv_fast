@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * redis管理session
+ * 重写session的增删改查
  * shiro session dao
- *
  */
 @Component
 public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO
