@@ -18,6 +18,8 @@ package manage.modules.sys.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysUserEntity;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -25,6 +27,7 @@ import java.util.List;
  * 系统用户
  * 
  */
+@Repository
 public interface SysUserDao extends BaseMapper<SysUserEntity> {
 	
 	/**

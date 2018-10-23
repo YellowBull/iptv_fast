@@ -18,10 +18,12 @@ package manage.modules.sys.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysDictEntity;
+import org.springframework.stereotype.Repository;
 
 /**
  * 数据字典
  */
+@Repository
 public interface SysDictDao extends BaseMapper<SysDictEntity> {
 	
 }

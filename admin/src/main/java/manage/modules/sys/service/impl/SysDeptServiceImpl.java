@@ -23,6 +23,7 @@ import manage.common.utils.Constant;
 import manage.modules.sys.dao.SysDeptDao;
 import manage.modules.sys.entity.SysDeptEntity;
 import manage.modules.sys.service.SysDeptService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,7 +33,8 @@ import java.util.Map;
 @Service("sysDeptService")
 public class SysDeptServiceImpl extends ServiceImpl<SysDeptDao, SysDeptEntity> implements SysDeptService
 {
-	
+	@Autowired
+	SysDeptDao dao;
 	@Override
 	@DataFilter(subDept = true, user = false)
 	public List<SysDeptEntity> queryList(Map<String, Object> params){
@@ -41,10 +43,19 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptDao, SysDeptEntity> i
 			.addFilterIfNeed(params.get(Constant.SQL_FILTER) != null, (String)params.get(Constant.SQL_FILTER)));
 
 		for(SysDeptEntity sysDeptEntity : deptList){
-			SysDeptEntity parentDeptEntity =  this.selectById(sysDeptEntity.getParentId());
+			List<Long> list = dao.queryRoleId(sysDeptEntity.getDeptId());
+			if(!list.isEmpty()) {
+				for (Long id : list) {
+					List<String> role = dao.queryRole(id);
+					for (String s:role){
+						sysDeptEntity.setParentName(s);
+					}
+				}
+			}
+			/*SysDeptEntity parentDeptEntity =  this.selectById(sysDeptEntity.getParentId());
 			if(parentDeptEntity != null){
 				sysDeptEntity.setParentName(parentDeptEntity.getName());
-			}
+			}*/
 		}
 		return deptList;
 	}
@@ -64,6 +75,17 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptDao, SysDeptEntity> i
 		getDeptTreeList(subIdList, deptIdList);
 
 		return deptIdList;
+	}
+
+	/**
+	 *
+	 * @param deptId 这个是用来返回角色ID的
+	 * @return
+	 */
+	@Override
+	public List<Long> getRoleId(Long deptId) {
+		List<Long> id = dao.queryRoleId(deptId);
+		return id;
 	}
 
 	/**

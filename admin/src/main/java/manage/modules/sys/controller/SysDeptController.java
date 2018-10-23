@@ -51,7 +51,7 @@ public class SysDeptController extends AbstractController {
 	}
 
 	/**
-	 * 选择部门(添加、修改菜单)
+	 * 选择权限(添加、修改菜单)
 	 */
 	@RequestMapping("/select")
 	@RequiresPermissions("sys:dept:select")

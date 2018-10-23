@@ -101,7 +101,7 @@ var vm = new Vue({
                 type: 1,
                 offset: '50px',
                 skin: 'layui-layer-molv',
-                title: "选择部门",
+                title: "选择权限",
                 area: ['300px', '450px'],
                 shade: 0,
                 shadeClose: false,
@@ -136,9 +136,9 @@ var Dept = {
 Dept.initColumn = function () {
     var columns = [
         {field: 'selectItem', radio: true},
-        {title: '部门ID', field: 'deptId', visible: false, align: 'center', valign: 'middle', width: '80px'},
-        {title: '部门名称', field: 'name', align: 'center', valign: 'middle', sortable: true, width: '180px'},
-        {title: '上级部门', field: 'parentName', align: 'center', valign: 'middle', sortable: true, width: '100px'},
+        {title: '权限ID', field: 'deptId', visible: false, align: 'center', valign: 'middle', width: '80px'},
+        {title: '权限名称', field: 'name', align: 'center', valign: 'middle', sortable: true, width: '180px'},
+        {title: '角色', field: 'parentName', align: 'center', valign: 'middle', sortable: true, width: '100px'},
         {title: '排序号', field: 'orderNum', align: 'center', valign: 'middle', sortable: true, width: '100px'}]
     return columns;
 };

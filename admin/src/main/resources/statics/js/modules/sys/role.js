@@ -5,7 +5,7 @@ $(function () {
         colModel: [
             { label: '角色ID', name: 'roleId', index: "role_id", width: 45, key: true },
             { label: '角色名称', name: 'roleName', index: "role_name", width: 75 },
-            { label: '所属部门', name: 'deptName', sortable: false, width: 75 },
+            { label: '权限', name: 'deptName', sortable: false, width: 75 },
             { label: '备注', name: 'remark', width: 100 },
             { label: '创建时间', name: 'createTime', index: "create_time", width: 80}
         ],
@@ -249,7 +249,7 @@ var vm = new Vue({
                 type: 1,
                 offset: '50px',
                 skin: 'layui-layer-molv',
-                title: "选择部门",
+                title: "选择权限",
                 area: ['300px', '450px'],
                 shade: 0,
                 shadeClose: false,

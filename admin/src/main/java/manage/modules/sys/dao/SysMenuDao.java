@@ -18,12 +18,14 @@ package manage.modules.sys.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysMenuEntity;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * 菜单管理
  */
+@Repository
 public interface SysMenuDao extends BaseMapper<SysMenuEntity> {
 	
 	/**

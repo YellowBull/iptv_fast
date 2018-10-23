@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 部门管理
+ * 权限管理
  */
 public interface SysDeptService extends IService<SysDeptEntity> {
 
@@ -40,4 +40,5 @@ public interface SysDeptService extends IService<SysDeptEntity> {
 	 */
 	List<Long> getSubDeptIdList(Long deptId);
 
+	List<Long> getRoleId(Long deptId);
 }

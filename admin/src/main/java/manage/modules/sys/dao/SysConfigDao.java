@@ -19,10 +19,12 @@ package manage.modules.sys.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysConfigEntity;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * 系统配置信息
  */
+@Repository
 public interface SysConfigDao extends BaseMapper<SysConfigEntity>
 {
 

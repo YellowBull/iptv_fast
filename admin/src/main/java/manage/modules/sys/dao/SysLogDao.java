@@ -18,10 +18,12 @@ package manage.modules.sys.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysLogEntity;
+import org.springframework.stereotype.Repository;
 
 /**
  * 系统日志
  */
+@Repository
 public interface SysLogDao extends BaseMapper<SysLogEntity> {
 	
 }

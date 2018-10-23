@@ -7,4 +7,11 @@
 		select dept_id from sys_dept where parent_id = #{value} and del_flag = 0
 	</select>
 
+	<select id="queryRoleId" parameterType="long" resultType="long">
+		select s.role_id from sys_dept d join sys_role_dept s on d.dept_id = s.dept_id and s.dept_id = #{deptId}
+	</select>
+
+	<select id="queryRole" parameterType="long" resultType="String">
+		select a.role_name from sys_role a join sys_role_dept b on a.role_id = b.role_id and a.role_id = #{roleId}
+	</select>
 </mapper>

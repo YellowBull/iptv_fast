@@ -18,12 +18,14 @@ package manage.modules.sys.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import manage.modules.sys.entity.SysUserRoleEntity;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * 用户与角色对应关系
  */
+@Repository
 public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {
 	
 	/**
